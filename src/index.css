@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-hand: "Gaegu", cursive;
+  
+  --color-primary: var(--primary-color, #88B04B);
+  --color-accent: #D4A373; /* Wood Brown */
+  --color-cream: #FDFBF7;
+  --color-apricot: #FFB347;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-zinc-800 font-sans antialiased;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-sm border border-zinc-200 shadow-sm rounded-3xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-primary to-accent;
+}
+
+.nav-link {
+  @apply text-zinc-600 hover:text-primary transition-colors duration-300 text-sm font-medium;
+}
+
+.btn-primary {
+  @apply px-8 py-4 bg-primary hover:opacity-90 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md;
+}
+
+.btn-outline {
+  @apply px-8 py-4 border-2 border-primary/30 hover:border-primary text-primary rounded-full transition-all duration-300 font-bold;
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-cream;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-200 rounded-full hover:bg-primary/30 transition-colors;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full hover:bg-primary/50;
+}
